@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+/* 전체 레이아웃 */
+#wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(700px, 1800px) 1fr;
+  grid-template-rows: 70px auto;
+  grid-template-areas:
+    'hs1 h hs2'
+    'cs5 c cs6';
+}
+
+/* 공백 영역 */
+.sp1 {
+  grid-area: hs1;
+}
+.sp2 {
+  grid-area: hs2;
+}
+.sp5 {
+  grid-area: cs5;
+}
+.sp6 {
+  grid-area: cs6;
+}
+
+/* 헤더 */
+#header {
+  grid-area: h;
+  display: grid;
+  grid-template-areas: '. h1 h2 h3 h4';
+  grid-template-columns: auto 0.4fr 0.4fr 100px 100px;
+  border-bottom: 1px solid gray;
+}
+#header .header__title {
+  grid-area: h1;
+  justify-self: right;
+  align-self: end;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+}
+#header .header__subTitle {
+  grid-area: h2;
+  justify-self: start;
+  align-self: end;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+/* 메인박스 */
+
+#mm-b {
+  border: ridge 1px black;
+  width: 870px;
+  height: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+/* 메인 */
+#mm {
+  grid-area: c;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'ml mr';
+  border-style: ridge;
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+
+/* 개인회원쪽 */
+#mm .ml {
+  width: 400px;
+  height: 300px;
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 15px;
+  grid-area: ml;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f4f4;
+  /* border: solid 1px black; */
+  justify-self: flex-end;
+}
+
+#mm .ml .ml-1 {
+  margin: 10px 0px;
+  justify-self: center;
+  align-self: center;
+  font-weight: bold;
+}
+#mm .ml .ml-2 {
+  grid-area: ml-2;
+  margin: 10px 0px;
+  align-self: center;
+}
+#mm .ml .ml-2 p {
+  margin: 0px 0px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#mm .ml .ml-2 .fa-solid {
+  color: #0061b7;
+  font-size: 70px;
+}
+
+#mm .ml .ml-3 {
+  grid-area: ml-3;
+  margin: 10px 0px;
+  justify-self: center;
+  align-self: center;
+}
+
+#mm .ml .ml-3 a {
+  text-decoration: none;
+}
+#mm .ml .ml-3 a:link {
+  color: black;
+}
+#mm .ml .ml-3 a:visited {
+  color: black;
+}
+#mm .btn-l {
+  background-color: rgb(121, 205, 156);
+  width: 200px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  margin-top: 5px;
+  border-style: none;
+}
+#mm .ml .ml-4 {
+  grid-area: ml-4;
+  display: flex;
+  margin: 10px 0px;
+  justify-content: space-evenly;
+}
+#mm .ml .ml-4 p {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0px 0px;
+}
+#mm .ml .ml-4 a {
+  text-decoration: none;
+}
+#mm .ml .ml-4 a:link {
+  color: black;
+}
+#mm .ml .ml-4 a:visited {
+  color: black;
+}
+#GgCustomLogin {
+  list-style-type: none;
+}
+
+/* 기업회원쪽 */
+#mm .mr {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  background-color: #f6f4f4;
+  /* border: solid 1px black; */
+
+}
+#mm .mr .mr-1 {
+  grid-area: mr-1;
+  margin: 10px 0px;
+  text-align: center;
+  font-weight: bold;
+}
+#mm .mr .mr-2 {
+  grid-area: mr-2;
+  margin: 10px 0px;
+  text-align: center;
+}
+#mm .mr .mr-2 p {
+  margin: 0px 0px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+#mm .mr .mr-2 .fa-solid {
+  color: #0061b7;
+  font-size: 70px;
+}
+#mm .mr .mr-3 {
+  grid-area: mr-3;
+  margin: 10px 0px;
+  justify-self: center;
+  align-self: center;
+}
+#mm .mr .mr-3 .btn-r {
+  background-color: rgb(121, 205, 156);
+  width: 200px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  margin-top: 5px;
+  border-style: none;
+}
+#mm .mr .mr-3 a {
+  text-decoration: none;
+}
+#mm .mr .mr-3 a:link {
+  color: black;
+}
+#mm .mr .mr-3 a:visited {
+  color: black;
+}
+#mm .mr .mr-4 {
+  grid-area: mr-4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 65px;
+}

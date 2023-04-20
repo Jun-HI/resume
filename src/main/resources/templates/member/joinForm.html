@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+          name="description"
+          content="서로에게 이득이 되는 아르바이트 구직정보 사이트 단디 알바"
+  />
+  <meta name="keywords" content="dandi"/>
+  <meta name="author" content="4팀"/>
+  <link rel="stylesheet" href="/css/signup/common.css"/>
+  <link rel="stylesheet" href="/css/signup/login.css">
+
+  <title>로그인-단디알바</title>
+  <script
+          src="https://kit.fontawesome.com/c3420fd862.js"
+          crossorigin="anonymous"
+  ></script>
+  <script defer src="/js/signup.js"></script>
+</head>
+<body>
+<div id="wrapper">
+  <!-- 헤더 -->
+  <header id="header">
+    <div class="header__title"><a href="#">단디알바</a></div>
+    <div class="header__subTitle"><a href="#">:짧지만 확실하게</a></div>
+  </header>
+
+  <!-- 메인: insert content -->
+  <form action="/members/add" method="post" th:object="${joinForm}">
+    <main id="main-b">
+      <div class="tm">개인 회원가입</div>
+      <div id="mm">
+        <div class="agr">
+          <div class="agr-t">
+            <input id="checkb" type="checkbox" onclick="checkAll()"/>이용약관
+            전체동의
+          </div>
+          <div id="arg-bc">
+            <div class="arg-1">
+              <input name="chkbox" type="checkbox"/>
+              <p style="color: red; margin-right: 2px">[필수]</p>
+              <p>만 15세 이상입니다.</p>
+              <i class="fa-solid fa-sort-down a"></i>
+              <i class="fa-solid fa-caret-up a"></i>
+            </div>
+            <div id="text-box1">
+              <p style="font-weight: bold">제 1 조 (목적)</p>
+              <p>
+                본 약관은 (주)미디어윌네트웍스(이하 “회사”)가 운영하는
+                알바천국 온라인 웹사이트를 통하여 직업정보 관련 제반
+                “서비스”를 제공함에 있어 이용 고객(이하 “회원”)과 “회사”간의
+                권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로
+                합니다.
+              </p>
+            </div>
+
+            <div class="agr-2">
+              <input name="chkbox" type="checkbox"/>
+              <p style="color: red; margin-right: 2px">[필수]</p>
+              <p>서비스 이용약관 동의</p>
+              <i class="fa-solid fa-sort-down b"></i>
+              <i class="fa-solid fa-caret-up b"></i>
+            </div>
+            <div id="text-box2">
+              <p style="font-weight: bold">제 1 조 (목적)</p>
+              <p>
+                본 약관은 (주)미디어윌네트웍스(이하 “회사”)가 운영하는
+                알바천국 온라인 웹사이트를 통하여 직업정보 관련 제반
+                “서비스”를 제공함에 있어 이용 고객(이하 “회원”)과 “회사”간의
+                권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로
+                합니다.
+              </p>
+            </div>
+            <div class="agr-3">
+              <input name="chkbox" type="checkbox"/>
+              <p style="color: red; margin-right: 2px">[필수]</p>
+              <p>개인정보 수집 및 이용 동의</p>
+              <i class="fa-solid fa-sort-down c"></i>
+              <i class="fa-solid fa-caret-up c"></i>
+            </div>
+            <div id="text-box3">
+              <p style="font-weight: bold">제 1 조 (목적)</p>
+              <p>
+                본 약관은 (주)미디어윌네트웍스(이하 “회사”)가 운영하는
+                알바천국 온라인 웹사이트를 통하여 직업정보 관련 제반
+                “서비스”를 제공함에 있어 이용 고객(이하 “회원”)과 “회사”간의
+                권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로
+                합니다.
+              </p>
+            </div>
+            <div class="agr-4">
+              <input name="chkbox" type="checkbox"/>
+              <p style="margin-right: 2px">[선택]</p>
+              <p>개인정보 수집 및 이용 동의</p>
+              <i class="fa-solid fa-sort-down d"></i>
+              <i class="fa-solid fa-caret-up d"></i>
+            </div>
+            <div id="text-box4">
+              <p style="font-weight: bold">제 1 조 (목적)</p>
+              <p>
+                본 약관은 (주)미디어윌네트웍스(이하 “회사”)가 운영하는
+                알바천국 온라인 웹사이트를 통하여 직업정보 관련 제반
+                “서비스”를 제공함에 있어 이용 고객(이하 “회원”)과 “회사”간의
+                권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로
+                합니다.
+              </p>
+            </div>
+            <div class="agr-5">
+              <input name="chkbox" type="checkbox"/>
+              <p style="margin-right: 2px">[선택]</p>
+              <p>광고성 정보 수신 동의(email)</p>
+              <i class="fa-solid fa-sort-down e"></i>
+              <i class="fa-solid fa-caret-up e"></i>
+            </div>
+            <div id="text-box5">
+              <p style="font-weight: bold">제 1 조 (목적)</p>
+              <p>
+                본 약관은 (주)미디어윌네트웍스(이하 “회사”)가 운영하는
+                알바천국 온라인 웹사이트를 통하여 직업정보 관련 제반
+                “서비스”를 제공함에 있어 이용 고객(이하 “회원”)과 “회사”간의
+                권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로
+                합니다.
+              </p>
+            </div>
+            <div class="agr-6">
+              <input name="chkbox" type="checkbox"/>
+              <p style="margin-right: 2px">[선택]</p>
+              <p>서비스 이용약관 동의(문자)</p>
+              <i class="fa-solid fa-sort-down f"></i>
+              <i class="fa-solid fa-caret-up f"></i>
+            </div>
+            <div id="text-box6">
+              <p style="font-weight: bold">제 1 조 (목적)</p>
+              <p>
+                본 약관은 (주)미디어윌네트웍스(이하 “회사”)가 운영하는
+                알바천국 온라인 웹사이트를 통하여 직업정보 관련 제반
+                “서비스”를 제공함에 있어 이용 고객(이하 “회원”)과 “회사”간의
+                권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로
+                합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p id="agr__bt">
+          ※개인정보 수집 및 이용에 대한 동의를 거부할 수 있으면 동의 거부시
+          회원가입이 불가합니다.
+        </p>
+        <ul id="id-b">
+
+          <li>
+            <label for="id" class="id-t">
+              <p style="margin-right: 3px">사용할</p>
+              <p style="font-weight: bold; color: #3c3c3c">아이디</p>
+              <p>를 입력하세요(4~15자 영문,숫자)</p>
+            </label>
+          </li>
+          <li>
+            <input id="id" type="text" th:field="*{idPerson}"
+                   th:class="${#fields.hasErrors('idPerson') ? 'fieldError' : 'fieldSuccess'}"/>
+            <button id="emailDupChk" type="button">중복확인</button>
+            <div class="errmsg"></div>
+          </li>
+        </ul>
+        <div id="id-down">영문,숫자 4~15자를 입력해주세요.</div>
+        <li th:if="${#fields.hasErrors('idPerson')}">
+          <div></div>
+          <div th:errors="*{idPerson}" th:errorclass="fieldError"></div>
+        </li>
+        <ul id="pass-b">
+          <li>
+            <label for="pass" class="pass-t">
+              <p style="margin-right: 3px">사용할</p>
+              <p style="font-weight: bold; color: #3c3c3c">비밀번호</p>
+              <p>를 입력하세요(8~20자 영문,숫자)</p>
+            </label>
+          </li>
+          <li>
+            <input
+                    id="pass"
+                    class="pass-a"
+                    type="password"
+                    th:field="*{pwPerson}"
+                    th:class="${#fields.hasErrors('pwPerson') ? 'fieldError' : 'fieldSuccess'}"
+            />
+            <i class="fa-regular fa-lightbulb a"></i>
+            <i class="fa-solid fa-lightbulb a"> </i>
+          </li>
+        </ul>
+        <div id="pass-down">영문,숫자 8~20자를 입력해주세요.</div>
+        <li th:if="${#fields.hasErrors('pwPerson')}">
+          <div></div>
+          <div th:errors="*{pwPerson}" th:errorclass="fieldError"></div>
+        </li>
+        <ul id="passc-b">
+          <li>
+            <label
+                    for="passc"
+                    style="padding-left: 5px; font-weight: bold; color: #3c3c3c"
+            >
+              비밀번호 재입력</label
+            >
+          </li>
+          <li>
+            <input
+                    id="passc"
+                    class="passc-b"
+                    type="password"
+                    th:field="*{pwChkPerson}"
+                    th:class="${#fields.hasErrors('pwChkPerson') ? 'fieldError' : 'fieldSuccess'}"
+            />
+            <i class="fa-regular fa-lightbulb b"></i>
+            <i class="fa-solid fa-lightbulb b"> </i>
+          </li>
+        </ul>
+        <div id="passc-down">영문,숫자 8~20자를 입력해주세요.</div>
+        <li th:if="${#fields.hasErrors('pwChkPerson')}">
+          <div></div>
+          <div th:errors="*{pwChkPerson}" th:errorclass="fieldError"></div>
+        </li>
+        <ul id="name-b">
+          <li>
+            <label for="name" class="name-t">
+              <p style="padding-left: 5px; font-weight: bold; color: #3c3c3c">
+                이름
+              </p>
+            </label>
+          </li>
+          <li><input id="name" type="text" th:field="*{namePerson}"
+                     th:class="${#fields.hasErrors('namePerson') ? 'fieldError' : 'fieldSuccess'}"/></li>
+        </ul>
+        <div id="name-down">한글 2~5자를 입력해주세요.</div>
+        <li th:if="${#fields.hasErrors('namePerson')}">
+          <div></div>
+          <div th:errors="*{namePerson}" th:errorclass="fieldError"></div>
+        </li>
+        <ul id="birth-b">
+          <li>
+            <label for="birth" class="birth-t">
+              <p style="font-weight: bold; color: #3c3c3c">생년월일</p>
+              <p>(숫자 8자리),</p>
+              <p style="font-weight: bold; color: #3c3c3c">성별</p>
+              <p>(선택)</p>
+            </label>
+          </li>
+          <li class="bg-b">
+            <input id="birth" type="text" th:field="*{birthPerson}"
+            />
+            <input type="radio" id="male" name="gender" value="남" th:field="*{genderPerson}"/>
+            <label for="male" id="genm" class="ma">남자</label>
+            <input type="radio" id="female" name="gender" value="여" th:field="*{genderPerson}"/>
+            <label for="female" id="genw" class="wo">여자</label>
+          </li>
+        </ul>
+        <div id="birth-down">생년월일 8자리를 입력해주세요.</div>
+        <div id="adress">
+          <ul id="adr-b">
+            <input
+                    type="text"
+                    id="sample6_postcode"
+                    class="adr-t"
+                    placeholder="우편번호"
+            />
+          </ul>
+          <button class="btn-adr" onclick="sample6_execDaumPostcode()">
+            우편번호
+          </button>
+        </div>
+        <ul id="adr-b2">
+          <input
+                  type="text"
+                  id="sample6_address"
+                  class="adr-t2"
+                  placeholder="우편번호 버튼 클릭 후 선택하시면 됩니다."
+                  th:field="*{addressPerson}"
+          />
+        </ul>
+        <div id="adr-last">
+          <ul id="adr-b3">
+            <input
+                    type="text"
+                    id="sample6_detailAddress"
+                    class="adr-t3"
+                    placeholder="상세주소를 입력해주세요"
+                    th:field="*{addressDetailPerson}"
+            />
+          </ul>
+          <ul id="adr-b4">
+            <input
+                    type="text"
+                    id="sample6_extraAddress"
+                    class="adr-t4"
+                    placeholder="참고주소"
+            />
+          </ul>
+        </div>
+
+        <ul id="email-b">
+          <li>
+            <label
+                    for="email2"
+                    style="padding-left: 5px; font-weight: bold; color: #3c3c3c"
+            >
+              이메일</label
+            >
+          </li>
+          <li class="email-out">
+            <input id="email2" type="email" th:field="*{emailPerson}" data-tmp-number=""/>
+            <button id="btn-email" type="button">인증번호전송</button>
+          </li>
+        </ul>
+        <ul id="email-l">
+          <li class="sel1">@naver.com</li>
+          <li class="sel2">@nate.com</li>
+          <li class="sel3">@gmail.com</li>
+          <li class="sel4">@hanmail.com</li>
+          <li class="sel5">@hotmail.com</li>
+          <li class="sel6">@daum.com</li>
+          <li class="sel7">@yahoo.com</li>
+        </ul>
+        <ul id="emailNum-b">
+          <li>
+            <label for="emailNum2" style="padding-left: 5px; font-weight: bold; color: #3c3c3c">이메일 인증번호 입력</label>
+          </li>
+          <li class="email-in">
+            <input id="emailNum2" type="email"/>
+            <button id="btn_emailChk" type="button">확인</button>
+          </li>
+        </ul>
+        <ul id="phone-b">
+          <li>
+            <label for="phone" style="padding-left: 5px; font-weight: bold; color: #3c3c3c">휴대폰번호</label>
+          </li>
+          <li>
+            <input id="phone" type="tel" th:field="*{phonePerson}"/>
+          </li>
+        </ul>
+
+        <button id="btn-sign">가입하기</button>
+      </div>
+    </main>
+  </form>
+
+  <!-- 공백 태그-->
+  <div class="sp1"></div>
+  <div class="sp2"></div>
+  <div class="sp5"></div>
+  <div class="sp6"></div>
+</div>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<!--<script src="/js/login.js"></script>-->
+<script type="module">
+  import { ajax } from '/js/common.js';
+
+  //이메일 인증 번호 수신
+  const email = (res,e) => {
+      if (res.header.rtcd == '00') {
+        const tmpNumber = res.data;
+
+        const email = document.getElementById('email2');
+        email.dataset.tmpNumber = tmpNumber;
+      } else {
+        throw new Error(`${res.header.rtmsg}`);
+      }
+  }
+
+  //이메일 송신
+  const email_h = e => {
+    const email2 = document.getElementById('email2').value;
+    const url = `/api/member/emailAuth/${email2}`;
+
+    ajax
+      .get(url)
+      .then(res => res.json())
+      .then(res => email(res,e))
+      .catch(console.log);
+  }
+
+  document.getElementById('btn-email').addEventListener('click',email_h,false);
+
+  //이메일 인증
+  const emailChk_h = e => {
+    const $email = document.getElementById('email2');
+    const $emailChk = document.getElementById('emailNum2');
+    if($email.dataset.tmpNumber == $emailChk.value){
+      alert('이메일 인증성공');
+    }else{
+      alert('이메일 인증실패');
+    }
+  }
+  document.getElementById('btn_emailChk').addEventListener('click',emailChk_h,false);
+</script>
+</body>
+</html>

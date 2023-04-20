@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+            name="description"
+            content="서로에게 이득이 되는 아르바이트 구직정보 사이트 단디 알바"
+    />
+    <meta name="keywords" content="dandi" />
+    <meta name="author" content="4팀" />
+    <link rel="stylesheet" href="/css/login/common.css" />
+    <link rel="stylesheet" href="/css/login/login.css">
+    <title>로그인-단디알바</title>
+
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="header__title"><a href="#">단디알바</a></div>
+        <div class="header__subTitle"><a href="#">:짧지만 확실하게</a></div>
+    </header>
+
+    <!-- 메인: insert content -->
+    <main id="main">
+
+        <form action="" th:action method="post" th:object="${loginForm}">
+
+        <div class="main__title">
+            <a href="#">개인회원</a><a href="#">기업회원</a>
+        </div>
+        <div class="main__personMember">
+            <li th:if="${#fields.hasErrors('global')}" class="globalError">
+                <p th:each="err : ${#fields.errors('global')}" th:text="${err}">글로벌 오류</p>
+            </li>
+            <input type="text" placeholder="아이디 입력" th:field="*{idPerson}" th:errorclass="fieldError"/>
+            <li th:if="${#fields.hasErrors('idPerson')}">
+                <p th:errors="*{idPerson}" th:errorclass="fieldError"></p>
+            </li>
+            <input type="password" placeholder="비밀번호 입력" th:field="*{pwPerson}" th:errorclass="fieldError"/>
+            <li th:if="${#fields.hasErrors('pwPerson')}">
+                <p th:errors="*{pwPerson}" th:errorclass="fieldError"></p>
+            </li>
+           <button>로그인</button>
+            <ul>
+                <li><a href="#"><img src="./img/naver_icon1.png" style="width: 50px; height: 50px;"></a></li>
+                <li><a href="#"><img src="./img/kakaotalk_sharing_btn_medium.png" style="width:  50px; height: 50px;"></a></li>
+                <li><a href="#"><img src="./img/icons8-구글-로고-48.png" style="width: 50px; height: 50px;"></a></li>
+                <li><a href="#"><img src="./img/icons8-페이스-북-48.png" style="width: 50px; height: 50px;"></a></li>
+            </ul>
+            <ul>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">아이디 찾기</a></li>
+                <li><a href="#">비밀번호 찾기</a></li>
+            </ul>
+        </div>
+        <div class="main__companyMember">
+            <input type="text" id="inputId" placeholder="아이디 입력"/>
+            <input type="password" placeholder="비밀번호 입력"/>
+            <form><button>로그인</button></form>
+            <ul>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">아이디 찾기</a></li>
+                <li><a href="#">비밀번호 찾기</a></li>
+            </ul>
+        </div>
+        </form>
+    </main>
+
+    <!-- 공백 태그-->
+    <div class="sp1"></div>
+    <div class="sp2"></div>
+    <div class="sp5"></div>
+    <div class="sp6"></div>
+</div>
+<script src="/js/login.js"></script>
+</body>
+</html>

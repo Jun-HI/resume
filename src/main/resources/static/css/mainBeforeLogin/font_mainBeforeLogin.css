@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import "https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap";
+
+/* 헤더 폰트 */
+.header__login .header__loginButton {
+  font-weight: var(--normal-text-400);
+}
+.header__login .header__signUpButton {
+  font-weight: var(--normal-text-400);
+}
+

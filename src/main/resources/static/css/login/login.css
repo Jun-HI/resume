@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+
+#main .main__title a:nth-child(1) {
+  background-color: var(--color-normal-green);
+  font-weight: var(--header-subTitle-700);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 5px;
+}
+#main .main__title a:nth-child(1).active {
+  background-color: var(--color-normal-gray);
+}
+#main .main__title a:nth-child(2) {
+  background-color: var(--color-normal-gray);
+  font-weight: var(--header-subTitle-700);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 5px;
+}
+#main .main__title a:nth-child(2).active {
+  background-color: var(--color-normal-green);
+}
+/* 개인회원 로그인 */
+#main .main__personMember {
+}
+
+#main .main__personMember.active {
+}
+
+#main .main__personMember input[type=text], #main .main__personMember input[type=password] {
+  padding-left: 10px;
+  font-size: 12pt;
+  border: 2px solid var(--color-normal-green);
+  border-radius: 5px;
+}
+#main .main__personMember input[type=text]:focus, #main .main__personMember input[type=password]:focus {
+  outline: 2px solid var(--color-normal-deep-gray);
+}
+
+#main .main__personMember form button {
+  border: 2px solid var(--color-normal-green);
+  border-radius: 5px;
+  font-size: 12pt;
+  font-weight: var(--header-subTitle-700);
+  cursor: pointer;
+}
+#main .main__personMember form button:active {
+  background-color: var(--color-normal-green);
+}
+
+#main .main__personMember ul:nth-of-type(1) {
+
+}
+#main .main__personMember ul:nth-of-type(1) li, #main .main__personMember ul:nth-of-type(1) li a {
+
+}
+#main .main__personMember ul:nth-of-type(2) {
+
+}
+#main .main__personMember ul:nth-of-type(2) li, #main .main__personMember ul:nth-of-type(2) li a {
+
+}
+
+
+/* 기업회원 로그인 */
+#main .main__companyMember {
+
+}
+#main .main__companyMember.active {
+}
+
+#main .main__companyMember input[type=text], #main .main__companyMember input[type=password] {
+  padding-left: 10px;
+  font-size: 12pt;
+  border: 2px solid var(--color-normal-green);
+  border-radius: 5px;
+}
+#main .main__companyMember input[type=text]:focus, #main .main__companyMember input[type=password]:focus {
+  outline: 2px solid var(--color-normal-deep-gray);
+}
+#main .main__companyMember form button {
+  border: 2px solid var(--color-normal-green);
+  border-radius: 5px;
+  font-size: 12pt;
+  font-weight: var(--header-subTitle-700);
+  cursor: pointer;
+}
+#main .main__companyMember form button:active {
+  background-color: var(--color-normal-green);
+}
+#main .main__companyMember ul:nth-of-type(1) {
+
+}
+#main .main__companyMember ul:nth-of-type(1) li, #main .main__companyMember ul:nth-of-type(1) li a {
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="서로에게 이득이 되는 아르바이트 구직정보 사이트 단디 알바">
+    <meta name="keywords" content="dandi">
+    <meta name="author" content="4팀">
+    <title>단디알바</title>
+    <link rel="stylesheet" href="./common/common.css">
+    <link rel="stylesheet" href="./memberInformationChangeLayout.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://kit.fontawesome.com/72dc3cd256.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="wrapper">
+
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="header__title"><a href="#">단디알바</a></div>
+        <div class="header__subTitle"><a href="#">:짧지만 확실하게</a></div>
+        <div class="header__login"><input class="header__loginButton" type="button" value="로그인"></input></div>
+        <div class="header__signUp"><input class="header__signUpButton" type="button" value="회원가입"></div>
+    </header>
+    <!-- 글로벌 메뉴바 -->
+    <nav id="gnb">
+        <ul class="gnb__info"><a href="#">채용정보</a>
+            <div class="container1">
+                <li class="gnb__infoLnb"><a href="#">구인 게시판</a></li>
+            </div>
+        </ul>
+        <ul class="gnb__cum"><a href="#">커뮤니티</a>
+            <div class="container2">
+                <li class="gnb__cumLnb"><a href="#">고충 게시판</a></li>
+            </div>
+        </ul>
+        <ul class="gnb__member"><a href="#">개인 서비스</a>
+            <div class="container3">
+                <li class="gnb__memberLnb1"><a href="#">이력서 작성</a></li>
+                <li class="gnb__memberLnb2"><a href="#">이력서 관리</a></li>
+                <li class="gnb__memberLnb3"><a href="#">스케줄 보기</a></li>
+                <li class="gnb__memberLnb4"><a href="#">회원정보 수정</a></li>
+                <li class="gnb__memberLnb5"><a href="#">비밀번호 변경</a></li>
+            </div>
+        </ul>
+        <ul class="gnb__manager"><a href="#">기업 서비스</a>
+            <div class="container4">
+                <li class="gnb__managerLnb1"><a href="#">구인게시글 관리</a></li>
+                <li class="gnb__managerLnb2"><a href="#">지원자 이력서 관리</a></li>
+                <li class="gnb__managerLnb3"><a href="#">스케줄 등록</a></li>
+                <li class="gnb__managerLnb4"><a href="#">회원정보 수정</a></li>
+                <li class="gnb__managerLnb5"><a href="#">비밀번호 변경</a></li>
+            </div>
+        </ul>
+        <ul class="gnb__support"><a href="#">고객지원</a>
+            <div class="container5">
+                <li class="gnb__supportLnb1"><a href="#">공지사항</a></li>
+                <li class="gnb__supportLnb2"><a href="#">아이디 찾기</a></li>
+                <li class="gnb__supportLnb3"><a href="#">비밀번호 찾기</a></li>
+                <li class="gnb__supportLnb4"><a href="#">회원탈퇴</a></li>
+            </div>
+        </ul>
+    </nav>
+    <!-- 메인: insert content -->
+    <main id="main">
+
+        <header id="mainHeader">
+            <ul class="main__headerMenu">
+                <li><button class="main__menu1">회원정보수정</button></li>
+                <li><button class="main__menu2 active">비밀번호변경</button></li>
+                <li><button class="main__menu3 active">회원탈퇴</button></li>
+            </ul>
+        </header>
+
+        <button><a th:href="@{|/resume/${session.loginMember.idPerson}/add|}">이력서 작성</a></button>
+<!--        <button><a th:href="@{|/resume/{resumeId}/resumeFormDetail/{session.loginMember.resumeDetailId}/{session.loginMember.idPerson}|}">이력서 목록</a></button>-->
+
+
+            <form action="" th:action="@{/members/edit}" method="post" th:object="${modifyForm}">
+        <div id="mainContent">
+            <ul class="mainContentMenu1">
+                <li class="area1">
+                    <label for="myId">
+                        <p style="display:inline;">
+                            &ensp;아 &ensp;&ensp;&ensp;&ensp; 이 &ensp;&ensp;&ensp;&ensp;디
+                        </p>
+                    </label>
+                </li><input type="text" id="myId" th:field="*{idPerson}">
+                <li class="area2"><label for="myName">
+                    <br>
+                    <p style="display:inline;">
+                        &ensp;&ensp;&ensp;이 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;름&ensp;&ensp;&ensp;
+                    </p>
+                </label>
+                </li><input type="text" id="myName" th:field="*{namePerson}">
+                <li class="area3"><label for="email">
+                    <br>
+                    <p style="display:inline;">
+                        &ensp;이&emsp;&ensp;&ensp;메&ensp;&emsp;&ensp;일&ensp;&ensp;
+                    </p>
+                </label>
+                </li><input type="email" maxlength="30" id="email" placeholder="&ensp;이메일을 입력하세요."
+                    th:field="*{emailPerson}"
+                  th:class="${#fields.hasErrors('emailPerson') ? 'fieldError' : 'fieldSuccess'}">
+                <div id="email_down">올바른 이메일을 입력하세요.(-과 공백없이 영어 숫자 조합 10~30자리)</div>
+                <li class="area4">
+                    <label for="phone">
+                        <br>
+                        <p style="display:inline;">
+                            &ensp; 휴&ensp;대&ensp;폰&ensp;번&ensp;호 &ensp;
+                        </p>
+                    </label>
+                </li><input type="tel" maxlength="11" id="phone" placeholder="&ensp;휴대폰번호를 -없이 입력하세요."
+                    th:field="*{phonePerson}"   th:class="${#fields.hasErrors('phonePerson') ? 'fieldError' : 'fieldSuccess'}"><br>
+                <div id="phone_down">올바른 전화번호를 입력하세요.(-과 공백없이 11자리 숫자)</div>
+                <li class="area5">
+                    <label>
+                        <br>
+                        <p style="display:inline;">
+                            &ensp;&ensp;&ensp;주&ensp;&ensp;&ensp;&ensp;&ensp; 소&ensp;&ensp;&ensp;&ensp;
+                        </p>
+                    </label>
+                </li>
+                <li class="area5">
+                    <input type="text" style="display:inline;" id="sample6_postcode" placeholder="&ensp;우편번호" readonly>
+                </li>
+                <li class="area6">
+                    <input type="button" style="display:inline;" id="adderssBtn" onclick="sample6_execDaumPostcode()" value="&ensp;우편번호 찾기" readonly>
+                    <br>
+                </li>
+                <li class="area7"><input type="text" style="display:inline;" id="sample6_address" placeholder="&ensp;주소"
+                    th:field="*{addressPerson}"   th:class="${#fields.hasErrors('addressPerson') ? 'fieldError' : 'fieldSuccess'}"></li>
+                <li class="area8"><input type="text" style="display:inline;" id="sample6_detailAddress" placeholder="&ensp;상세주소" th:field="*{addressDetailPerson}"   th:class="${#fields.hasErrors('addressDetailPerson') ? 'fieldError' : 'fieldSuccess'}"></li>
+                <li class="area9"><input type="text" style="display:inline;" id="sample6_extraAddress" placeholder="&ensp;참고항목" readonly></li>
+                <li class="area10">
+                <li class="area9">
+                    <label>
+                        <br>
+                        <p style="display:inline;">
+                            사 업 자 등 록 번 호
+                        </p>
+                    </label>
+                </li>
+<!--                <input type="text" maxlength="10" id="companyNumber" placeholder="&ensp;사업자등록번호를 입력하세요.">-->
+                <div id="companyNumber_down">올바른 사업자등록번호를 입력하세요.(-과 공백없이 10자리 숫자)</div>
+                <br>
+                <br>
+                <li class="area10">
+                    <button id="compl" >
+                        수정완료
+                    </button>
+                </li>
+            </ul>
+        </div>
+        </form>
+    </main>
+
+    <!-- 푸터 위쪽 -->
+    <footer id="footerUp">
+        <div class="footerUp__button1"><a href="#">
+            <pre> 회사소개 </pre>
+        </a></div>
+        <div class="footerUp__button2"><a href="#">
+            <pre> 이용약관 </pre>
+        </a></div>
+        <div class="footerUp__button3"><a href="#">
+            <pre> 고객센터 </pre>
+        </a></div>
+        <div class="footerUp__button4"><a href="#">
+            <pre> 개인정보처리 방침 </pre>
+        </a></div>
+    </footer>
+    <!-- 푸터 아래쪽 -->
+    <footer id="footerDown">
+        <div class="footerDown__text1">단디알바</div>
+        <div class="footerDown__text2">회사 소개 울산KH정보교육원</div>
+        <div class="footerDown__text3">대표자 이상인</div>
+        <div class="footerDown__text4">주소 울산시 남구 OOOOOO</div>
+        <div class="footerDown__text5">고객센터 010-1234-5678</div>
+        <div class="footerDown__text6">E-mail abcd@abcd.com</div>
+        <div class="footerDown__text7">Copyright 2023 단디알바 Corp.All. Right Reserved.</div>
+    </footer>
+    <!-- 공백 태그-->
+    <div class="sp1"></div>
+    <div class="sp2"></div>
+    <div class="sp3"></div>
+    <div class="sp4"></div>
+    <div class="sp5"></div>
+    <div class="sp6"></div>
+    <div class="sp7"></div>
+    <div class="sp8"></div>
+    <div class="sp9"></div>
+    <div class="sp10"></div>
+</div>
+<script src="./memberInformationChange.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+</html>

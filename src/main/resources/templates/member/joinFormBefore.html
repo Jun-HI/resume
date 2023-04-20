@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+            name="description"
+            content="서로에게 이득이 되는 아르바이트 구직정보 사이트 단디 알바"
+    />
+    <meta name="keywords" content="dandi" />
+    <meta name="author" content="4팀" />
+    <link rel="stylesheet" href="./common/common.css" />
+    <link rel="stylesheet" href="./login.css">
+    <title>로그인-단디알바</title>
+    <script
+            src="https://kit.fontawesome.com/c3420fd862.js"
+            crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 -->
+    <header id="header">
+        <div class="header__title"><a href="#">단디알바</a></div>
+        <div class="header__subTitle"><a href="#">:짧지만 확실하게</a></div>
+    </header>
+</div>
+
+<!-- 메인: insert content -->
+<div id="mm-b">
+    <div id="mm">
+        <div class="ml">
+            <div class="ml-1">이력서 등록 후 알바를 찾아보세요!</div>
+            <div class="ml-2">
+                <i class="fa-solid fa-users"></i>
+                <p>개인회원</p>
+            </div>
+            <div class="ml-3">><button class="btn-l">
+                <a href="" th:field="@{/members/add}">개인회원 가입하기</a>
+                </button>
+            </div>
+            <div class="ml-4">
+                <a href="#"
+                ><img
+                        src="./img/naver_icon1.png"
+                        style="width: 50px; height: 50px"
+                />
+                    <p>네이버</p>
+                </a>
+                <a href="#"
+                ><img
+                        src="./img/kakaotalk_sharing_btn_medium.png"
+                        style="width: 50px; height: 50px"
+                />
+                    <p>카카오톡</p>
+                </a>
+                <li id="GgCustomLogin">
+                    <a href="javascript:void(0)"
+                    ><img
+                            src="./img/icons8-구글-로고-48.png"
+                            style="width: 50px; height: 50px"
+                    />
+                        <p>구글</p>
+                    </a>
+                </li>
+                <a href="#"
+                ><img
+                        src="./img/icons8-페이스-북-48.png"
+                        style="width: 50px; height: 50px"
+                />
+                    <p>페이스북</p>
+                </a>
+            </div>
+        </div>
+        <div class="mr">
+            <div class="mr-1">공고 등록 후 인재를 찾아보세요!</div>
+            <div class="mr-2">
+                <i class="fa-solid fa-building"></i>
+                <p>기업회원</p>
+            </div>
+            <div class="mr-3">
+                <button class="btn-r">
+                    <a href="../dandi_signup3/index.html">기업회원 가입하기</a>
+                </button>
+            </div>
+            <div class="mr-4"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 공백 태그-->
+<div class="sp1"></div>
+<div class="sp2"></div>
+<div class="sp5"></div>
+<div class="sp6"></div>
+</div>
+</body>
+</html>

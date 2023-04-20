@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+/* #categorySearch * {
+  outline: 0.1px dashed gainsboro;
+} */
+
+/* 헤더 버튼 */
+#header .header__loginButton{
+  border: 2px solid var(--color-normal-gray);
+  background-color: white;
+  border-radius: 10px;
+  width: 60px;
+  height: 25px;
+  line-height: 100%;
+  font-size: 10pt;
+}
+#header .header__loginButton:hover{
+  border: 2px solid var(--color-normal-green);
+  background-color: white;
+  cursor: pointer;
+}
+#header .header__signUpButton{
+  border: 2px solid var(--color-normal-gray);
+  background-color: white;
+  border-radius: 10px;
+  width: 70px;
+  height: 25px;
+  line-height: 100%;
+  font-size: 10pt;
+}
+#header .header__signUpButton:hover{
+  border: 2px solid var(--color-normal-green);
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 카테고리 프리워드 검색창 */
+
+#categorySearch .categorySearch__searchBox .categorySearch__searchBar {
+  width: 500px;
+  height: 45px;
+  border: 2px solid var(--color-normal-middle-gray);
+  border-radius: 15px;
+  font-size: 15pt;
+  padding-left: 40px;
+  color: var(--color-normal-middle-gray);
+}
+/* 서치 엑스 버튼 커스텀*/
+#categorySearch .categorySearch__searchBox input::-webkit-search-cancel-button{
+  display: none;
+}
+#categorySearch .categorySearch__searchBox i{
+  display: inline-flex;
+  position: relative;
+  right: 40px;
+  color: var(--color-normal-gray);
+  margin-left: 10px;
+}
+#categorySearch .categorySearch__searchBox i:hover{
+  display: inline-flex;
+  color: var(--color-normal-deep-green);
+  margin-left: 10px;
+}
+#categorySearch .categorySearch__searchBox .categorySearch__searchBar::placeholder{
+  color: var(--color-normal-gray);
+  font-size: 12pt;
+}
+#categorySearch .categorySearch__searchBox .categorySearch__searchBar:hover{
+  border: 2px solid var(--color-normal-deep-green);
+  box-shadow: 0 0 10px ;
+}
+#categorySearch .categorySearch__searchBox .categorySearch__searchBar:focus{
+  outline: none;
+  padding-left: 40px;
+  border: 2px solid var(--color-normal-deep-green);
+  box-shadow: 0 0 10px var(--color-normal-green);
+  color: var(--color-normal-deep-gray);
+}
+
+/* 카테고리 조건 검색창 */
+#categorySearch .categorySearch__categoryBox i {
+  display: inline-flex;
+  position: relative;
+  top: -30px;
+  right: -10px;
+  color: var(--color-normal-gray);
+}
+#categorySearch .categorySearch__categoryBox i:hover {
+  display: inline-flex;
+  color: var(--color-normal-deep-green);
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__select1{
+  border: 2px solid var(--color-normal-middle-gray);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#categorySearch .categorySearch__categoryBox .categorySearch__select1:hover{
+  border: 2px solid var(--color-normal-deep-green);
+  box-shadow: 0 0 10px var(--color-normal-green);
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__select2{
+  border: 2px solid var(--color-normal-middle-gray);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__select2:hover{
+  border: 2px solid var(--color-normal-deep-green);
+  box-shadow: 0 0 10px var(--color-normal-green);
+}
+#categorySearch .loc1, #categorySearch .loc2, #categorySearch .loc3, #categorySearch .loc4, #categorySearch .loc5, #categorySearch .loc6, #categorySearch .loc7, #categorySearch .loc8, #categorySearch .loc9, #categorySearch .loc10, #categorySearch .loc11, #categorySearch .loc12, #categorySearch .loc13, #categorySearch .loc14, #categorySearch .loc15, #categorySearch .loc16, #categorySearch .loc17 {
+
+}
+#display1-1:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-2:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-3:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-4:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-5:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-6:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-7:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-8:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-9:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-10:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-11:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-12:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-13:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-14:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-15:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-16:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+#display1-17:hover {
+  border: 2px solid var(--color-normal-deep-gray);
+}
+
+
+#categorySearch .categorySearch__categoryBox .categorySearch__selectDetailed {
+  border: 2px solid var(--color-normal-middle-gray);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__selectDetailed:hover{
+  border: 2px solid var(--color-normal-deep-gray);
+}
+
+/* 조건 검색창의 버튼들 */
+#categorySearch .categorySearch__categoryBox > input{
+  justify-content: center;
+}
+#categorySearch .categorySearch__categoryBox input.categorySearch__btn1{
+  background-color: var(--color-normal-gray);
+  border-style: none;
+  border-radius: 15pt;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12pt;
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__btn1:hover{
+  background-color: var(--color-normal-green);
+  cursor: pointer;
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__btn2{
+  background-color: var(--color-normal-gray);
+  border-style: none;
+  border-radius: 15pt;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12pt;
+}
+#categorySearch .categorySearch__categoryBox .categorySearch__btn2:hover{
+  background-color: var(--color-normal-green);
+  cursor: pointer;
+}
+
+
+

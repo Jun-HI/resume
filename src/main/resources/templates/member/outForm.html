@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="frm" action="/members/out" method="post" th:object="${outForm}">
+<ul class="mainContentMenu3 active">
+    <li class="UR1">
+        <label for="UR1_1">
+            <br>
+            <p style="display:inline;">
+                &ensp;아&ensp;&ensp;이&ensp;&ensp;디&ensp;
+            </p>
+        </label>
+    </li><input type="text" id="UR1_1"  th:field="*{idPerson}">
+    <li class="UR2">
+        <label for="UR2_1">
+            <br>
+            <p style="display:inline;">
+                비밀번호 입력
+            </p>
+        </label>
+    </li><input type="password" id="UR2_1" maxlength="20" placeholder="&ensp;비밀번호" th:field="*{pwPerson}">
+    <li th:if="${#fields.hasErrors('pwPerson')}">
+        <p th:errors="*{pwPerson}" th:errorclass="fieldError"></p>
+    </li>
+    <i class="fa-solid fa-circle-check c" style="color: #79cd9c;"></i><i class="fa-regular fa-circle-check c" style="color: #79cd9c;"></i>
+    <div id="UR2_1_down">올바른 비밀번호를 입력하세요.(공백제외 영문 대소문자, 숫자, 특수문자를 조합해서 8~20자)</div>
+    <li class="UR3">
+        <label for="UR3_1">
+            <br>
+            <p style="display:inline;">
+                비밀번호 확인
+            </p>
+        </label>
+    </li><input type="password" id="UR3_1" maxlength="20" placeholder="&ensp;비밀번호 재확인" th:field="*{pwChkPerson}">
+    <li th:if="${#fields.hasErrors('pwChkPerson')}">
+        <p th:errors="*{pwChkPerson}" th:errorclass="fieldError"></p>
+    </li>
+    <i class="fa-solid fa-circle-check d" style="color: #79cd9c;"></i><i class="fa-regular fa-circle-check d" style="color: #79cd9c;"></i>
+    <div id="UR3_1_down">올바른 비밀번호를 입력하세요.(공백제외 영문 대소문자, 숫자, 특수문자를 조합해서 8~20자)</div>
+    <br>
+    <br>
+    <li class="UR4">
+        <p>
+            <br>
+            회원탈퇴 전 꼭 확인해주세요
+            <br>
+            <br>
+            1. 동일한 아이디로 재가입 볼까
+            탈퇴 신청 시 즉시 처리되며, 해당 아이디로 재가입/로그인이 불가능 합니다.<br>
+            2. 탈퇴 즉시 회원정보 삭제
+            탈퇴 즉시 이력서 및 구직활동 정보가 모두 삭제되며, 삭제된 정보는 복구되지 않습니다. 단, 공공적 성격의 게씨물은 삭제되지 않으므로 탈퇴 전 미리 삭제해주세요.<br>
+            3. 이용 정보 일정기간 보관
+            "전자상거래 등에서 소비자보호에 관한 법들'에 따라 유료 결제에 관한 계약 기록운 5년간 보관합니다.
+            부적합 정보, 이용제한 및 직계에 관한 기록은 일정기간 보관합니다.</p>
+        <br>
+        <br>
+    </li>
+    <li class="UR5">
+        <button id="compl" >
+            회원탈퇴완료
+        </button>
+    </li>
+</ul>
+</form>
+</body>
+</html>

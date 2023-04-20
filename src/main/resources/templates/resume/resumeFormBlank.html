@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <style>
+<!--      * {-->
+<!--        /* outline: solid 1px red; */-->
+<!--      }-->
+<!--      #list__box {-->
+<!--        display: grid;-->
+<!--        border: ridge 1px black;-->
+<!--        height: 300px;-->
+<!--        width: 1000px;-->
+<!--        grid-template-columns: 1fr 1fr 1fr 1fr;-->
+<!--        grid-template-rows: 1fr 5fr 5fr 5fr;-->
+<!--        grid-template-areas:-->
+<!--          'b1     b2      b3      b4'-->
+<!--          'b5     b6      b7      b8'-->
+<!--          'b9     b10     b11     b12'-->
+<!--          'b13    b14     b15     b16';-->
+<!--      }-->
+<!--      #box__loc1 {-->
+<!--        grid-area: b1;-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--      }-->
+<!--      #loc1__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc2 {-->
+<!--        grid-area: b2;-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--      }-->
+<!--      #loc2__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc3 {-->
+<!--        grid-area: b3;-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--      }-->
+<!--      #loc3__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc4 {-->
+<!--        grid-area: b4;-->
+<!--        display: flex;-->
+<!--        justify-content: center;-->
+<!--      }-->
+<!--      #loc4__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc5 {-->
+<!--        grid-area: b5;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc5__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc6 {-->
+<!--        grid-area: b6;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc6__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc7 {-->
+<!--        grid-area: b7;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc7__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc8 {-->
+<!--        grid-area: b8;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc8__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc9 {-->
+<!--        grid-area: b9;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc9__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc10 {-->
+<!--        grid-area: b10;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc10__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc11 {-->
+<!--        grid-area: b11;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc11__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc12 {-->
+<!--        grid-area: b12;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc12__box {-->
+<!--        border-bottom: ridge 1px black;-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc13 {-->
+<!--        grid-area: b13;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc13__box {-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc14 {-->
+<!--        grid-area: b14;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc14__box {-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc15 {-->
+<!--        grid-area: b15;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+<!--      #loc15__box {-->
+<!--        border-right: ridge 1px black;-->
+<!--      }-->
+<!--      #box__loc16 {-->
+<!--        grid-area: b16;-->
+<!--        justify-self: center;-->
+<!--        align-self: center;-->
+<!--      }-->
+
+  </style>
+</head>
+<body>
+
+<button><a th:href="@{|/resume/${session.loginMember.idPerson}/add|}">이력서 작성</a></button>
+
+
+<table id="add" border="1">
+  <th>번호</th>
+  <th>이력서명</th>
+  <th>작성일/수정일</th>
+  <th>수정/삭제</th>
+  <tr th:each="resumeItem : ${resumeLists}">
+    <td th:text="${resumeItemStat.count}">1</td>
+    <td><a th:text="${resumeItem.resumeTitle}" th:href="@{|/resume/${session.loginMember.idPerson}/resumeFormDetail/${resumeItem.resumeId}|}"></a></td>
+    <td><span>날짜</span></td>
+    <td><span>
+      <button><a href="" th:href="@{|/resume/${session.loginMember.idPerson}/resumeFormModify/${resumeItem.resumeId}|}">수정</a></button>
+      <button><a href="" th:href="@{|/resume/${session.loginMember.idPerson}/${resumeItem.resumeId}/del|}">삭제</a></button>
+    </span></td>
+  </tr>
+</table>
+<!--<div id="list__box">-->
+<!--  <div id="loc1__box">-->
+<!--    <div id="box__loc1">선택창</div>-->
+<!--  </div>-->
+<!--  <div id="loc2__box">-->
+<!--    <div id="box__loc2">이력서제목</div>-->
+<!--  </div>-->
+<!--  <div id="loc3__box">-->
+<!--    <div id="box__loc3">작성일자/수정날짜</div>-->
+<!--  </div>-->
+<!--  <div th:each="resumeItem : ${resumeLists}">-->
+<!--    <div id="loc5__box" th:text="${resumeItemStat.count}">1</div>-->
+<!--    <div id="loc6__box">-->
+<!--      <div id="box__loc6" th:text="${resumeItem.resumeTitle}"></div>-->
+<!--    </div>-->
+<!--    <div id="loc7__box">-->
+<!--      <div id="box__loc7">3</div>-->
+<!--    </div>-->
+<!--    <div id="loc8__box">-->
+<!--      <div id="box__loc8">-->
+<!--        <button>수정</button>-->
+<!--        <button>삭제</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div id="loc9__box">-->
+<!--      <div id="box__loc9">2</div>-->
+<!--    </div>-->
+<!--    <div id="loc10__box">-->
+<!--      <div id="box__loc10" th:text="${resumeItem[1].resumeTitle}"></div>-->
+<!--    </div>-->
+<!--    <div id="loc11__box">-->
+<!--      <div id="box__loc11">7</div>-->
+<!--    </div>-->
+<!--    <div id="loc12__box">-->
+<!--      <div id="box__loc12">-->
+<!--        <button>수정</button>-->
+<!--        <button>삭제</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div id="loc13__box">-->
+<!--      <div id="box__loc13">3</div>-->
+<!--    </div>-->
+<!--    <div id="loc14__box">-->
+<!--      <div id="box__loc14" th:text="${resumeItem[2].resumeTitle}"></div>-->
+<!--    </div>-->
+<!--    <div id="loc15__box">-->
+<!--      <div id="box__loc15">11</div>-->
+<!--    </div>-->
+<!--    <div id="loc16__box">-->
+<!--      <div id="box__loc16">-->
+<!--        <button>수정</button>-->
+<!--        <button>삭제</button>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</div>
+
+
+</body>
+</html>
